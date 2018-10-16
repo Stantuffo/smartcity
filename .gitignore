@@ -1,0 +1,11 @@
+/storage/*.key
+/storage/framework/views
+/storage/framework/sessions
+/storage/framework/cache
+/storage/app/public
+/storage/logs
+/include/smarty/template_c
+/.idea
+/.vagrant
+.env
+/nbproject/private/

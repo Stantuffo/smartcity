@@ -1,0 +1,8 @@
+@include media-breakpoint-up(md) {
+  .blog-list {
+    transition: border-color .1s;
+    &:hover {
+      border-color: $color-500;
+    }
+  }
+}

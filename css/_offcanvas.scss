@@ -1,0 +1,105 @@
+.offcanvas-overflow {
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-overflow-scrolling: touch;
+}
+.offcanvas {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  width: 200px;
+  height: 100%;
+  -webkit-transform: translate3d(-200px, 0, 0);
+          transform: translate3d(-200px, 0, 0);
+  background: #f9f9f9;
+  -webkit-overflow-scrolling: touch;
+}
+.offcanvas,
+#container,
+.top-header,
+.middle-header {
+  transition: -webkit-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99), -webkit-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+.offcanvas-content {
+  transition: visibility 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+.content-overlay {
+  display: none;
+}
+.offcanvas-open {
+  #container,
+  .top-header,
+  .middle-header {
+    -webkit-transform: translate3d(200px, 0, 0);
+            transform: translate3d(200px, 0, 0);
+  }
+  .offcanvas {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .offcanvas-content {
+    visibility: visible;
+  }
+  .content-overlay {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    -webkit-animation: fadeIn 500ms;
+            animation: fadeIn 500ms;
+    background-color: rgba(0, 0, 0, .5);
+  }
+}
+.list-menu {
+  .list-group-item {
+    margin-bottom: 0;
+    padding: .5rem 1.25rem;
+    color: #666;
+    border: 0;
+    background-color: #f9f9f9;
+  }
+  a[data-toggle="collapse"]::after {
+    font-family: 'fontAwesome';
+    display: block;
+    float: right;
+    margin-right: -5px;
+    content: '\f0da';
+    transition: transform .2s;
+  }
+  a[data-toggle="collapse"][aria-expanded="true"]::after {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .sub-menu1 {
+    > div[role="tabpanel"] > a.list-group-item,
+    > div[role="tabpanel"] a[data-toggle="collapse"] {
+      padding: 0.4rem 1.25rem 0.4rem 2.8rem;
+      background-color: #ececec;
+    }
+  }
+  .sub-menu2 > div[role="tabpanel"] > a.list-group-item {
+    padding: 0.4rem 1.25rem 0.4rem 4.35rem;
+    background-color: #dfdfdf;
+  }
+  .list-group-item:hover,
+  .sub-menu1 > div[role="tabpanel"] > a.list-group-item:hover,
+  .sub-menu1 > div[role="tabpanel"] a[data-toggle="collapse"]:hover,
+  .sub-menu2 > div[role="tabpanel"] > a.list-group-item:hover {
+    color: #fff;
+    background-color: $color-500 !important;
+  }
+}
+.offcanvas .list-menu .list-group-item,
+.offcanvas .list-menu a[data-toggle="collapse"],
+.offcanvas .list-menu .sub-menu1 > div[role="tabpanel"] > a.list-group-item ,
+.offcanvas .list-menu .sub-menu1 > div[role="tabpanel"] a[data-toggle="collapse"] ,
+.offcanvas .list-menu .sub-menu2 > div[role="tabpanel"] > a.list-group-item {
+  border-radius: 0;
+}

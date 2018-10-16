@@ -1,0 +1,320 @@
+.overlay-thumbnail {
+  overflow: hidden;
+  .card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    @include border-radius($card-inner-border-radius);
+  }
+  .card-text {
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  img {
+    transition: all .4s ease;
+  }
+  &:hover img {
+    -webkit-transform: scale(1.1) rotate(-1.1deg);
+            transform: scale(1.1) rotate(-1.1deg);
+  }
+}
+@include media-breakpoint-down(lg) {
+  .overlay-thumbnail .card-text {
+    font-size: 18px;
+  }
+}
+@include media-breakpoint-down(xs) {
+  .overlay-thumbnail .card-text {
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+.card-product {
+  margin-bottom: 1rem;
+  border-color: transparent;
+  &:before {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    content: '';
+    transition-duration: .2s;
+    transition-property: top, right, bottom, left;
+    pointer-events: none;
+    opacity: 0;
+    border: 1px solid $color-500;
+    border-radius: $card-border-radius;
+  }
+  .img-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  a:not(.btn) {
+    color: $color;
+  }
+  .card-body {
+    padding: .5rem .8rem;
+  }
+  .card-text {
+    margin-bottom: .5rem;
+    a {
+      font-size: 16px;
+      line-height: 1;
+      transition: color .2s ease-out;
+      &:hover {
+        text-decoration: none;
+        color: $color-500;
+      }
+    }
+  }
+  .tools {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 45px;
+    padding: 7px;
+    cursor: default;
+    -webkit-animation-duration: .2s;
+            animation-duration: .2s;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: $card-border-radius;
+    button {
+      cursor: pointer;
+      color: #fff;
+      &:hover {
+        text-decoration: none;
+        color: #ccc;
+      }
+      i {
+        font-size: 16px;
+      }
+    }
+    button:last-child {
+      &:hover {
+        color: #ef5350 !important;
+      }
+    }
+  }
+  .tools[data-animate-in="flipInX"],
+  .tools[data-animate-in="rotateInDownLeft"],
+  .tools[data-animate-in="rotateInDownRight"],
+  .tools[data-animate-in="lightSpeedIn"],
+  .tools[data-animate-in="rollIn"] {
+    -webkit-animation-duration: .4s;
+            animation-duration: .4s;
+  }
+  .tools-bottom {
+    top: auto;
+  }
+  .tools-left,
+  .tools-right {
+    bottom: auto;
+    width: 34px;
+    height: auto;
+    padding: 0;
+  }
+  .tools-left {
+    right: auto;
+  }
+  .tools-right {
+    left: auto;
+  }
+  .tools-top,
+  .tools-bottom {
+    button:first-child {
+      padding-right: 1rem;
+    }
+    button:nth-child(2) {
+      border-color: #fff;
+      border-radius: 4px !important;
+      &:hover {
+        border-color: #ccc;
+        background-color: #333;
+      }
+    }
+    button:last-child {
+      padding-left: 1rem;
+    }
+  }
+  .badge.label {
+    position: absolute;
+    top: 0;
+    transition: opacity .3s;
+    opacity: .8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .label-top-left {
+    left: 0;
+  }
+  .label-top-right {
+    right: 0;
+  }
+  .label-bottom-left {
+    top: auto !important;
+    bottom: 0;
+    left: 0;
+  }
+  .label-bottom-right {
+    top: auto !important;
+    right: 0;
+    bottom: 0;
+  }
+}
+.price {
+  font-weight: bold;
+  color: #f57224;
+}
+.rating {
+  i {
+    color: #ffc107;
+  }
+  i.fa-star-o {
+    color: #ccc;
+  }
+}
+.input-group-qty {
+  min-width: 100px;
+  max-width: 150px;
+  input[type="text"] {
+    text-align: center;
+    border-color: $color-500;
+    @include hover-focus {
+      z-index: 2;
+    }
+  }
+  .input-group-btn .btn {
+    font-size: 0.7rem;
+    width: 31px;
+    @include hover-focus {
+      box-shadow: none;
+    }
+  }
+}
+.btn-add-quickview {
+  display: inline-block;
+  width: calc(100% - 35px);
+}
+.sorting-bar {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 10px 0;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #d6d8d9;
+  border-radius: $border-radius;
+  > div {
+    float: left;
+    margin-bottom: 10px;
+    > span {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}
+.btn-cart-tools {
+  font-size: 13px;
+  padding: 0 7px;
+  border-radius: 10px;
+  background-color: #e2e6ea;
+}
+.thead-cart-item {
+  min-width: 200px;
+}
+.table-detail tr td:first-child {
+  width: 150px;
+  &::after {
+    float: right;
+    content: ':';
+  }
+}
+.table-detail tr:first-child td:first-child::after,
+.table-detail tr:last-child td:first-child::after {
+  content: '';
+}
+.input-rating {
+  font-size: 24px;
+  display: inline-block;
+  color: #ffc107;
+  i {
+    width: 20px;
+  }
+}
+.zoomLens {
+  cursor: zoom-in !important;
+}
+
+@include media-breakpoint-up(md) {
+  .card-product {
+    &:hover:before,
+    &:focus:before,
+    &:active:before {
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      opacity: 1;
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .tools-top,
+  .tools-bottom {
+    height: 39px !important;
+    padding: 5px !important;
+    button:nth-child(2) {
+      font-size: 13px;
+    }
+  }
+  .card-product {
+    border-bottom-color: rgba(0, 0, 0, 0.125);
+    .card-body {
+      padding: .5rem;
+    }
+    .card-text {
+      margin-bottom: .3rem;
+    }
+  }
+}
+@include media-breakpoint-down(xs) {
+  .tools-top,
+  .tools-bottom {
+    height: 32px !important;
+    padding: 4px !important;
+    button:nth-child(2) {
+      font-size: 12px;
+      padding: 0.1rem 0.4rem;
+    }
+  }
+  .tools-left,
+  .tools-right {
+    width: 26px !important;
+    button {
+      padding: 0.25rem;
+    }
+  }
+  .card-product .card-text {
+    line-height: 1.3;
+    margin-bottom: .2rem;
+    a {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  .card-product .rating {
+    font-size: 11px;
+  }
+}
+.modal-quickview {
+  overflow: hidden;
+}
+@include media-breakpoint-only(md) {
+  .modal-quickview {
+    max-width: 600px;
+  }
+}

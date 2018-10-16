@@ -1,0 +1,21 @@
+.btn-select {
+  font-size: $font-size;
+  color: $color !important;
+  background-color: #fff !important;
+  &:focus,
+  &.focus {
+  	border-color: $color-500;
+    box-shadow: none !important;
+  }
+}
+.dropdown-select {
+  display: inline-block;
+  > .dropdown-menu {
+    overflow: auto;
+    max-height: 400px;
+  }
+}
+.dropdown-select > .dropdown-menu,
+.dropdown-select-nav > .dropdown-menu {
+  top: 100% !important;
+}

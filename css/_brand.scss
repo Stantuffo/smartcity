@@ -1,0 +1,16 @@
+.brand-slider {
+  padding-top: 5px;
+  img {
+    width: inherit !important;
+    margin: 0 auto;
+  }
+  .owl-nav {
+    top: -15px;
+  }
+  .card {
+    transition: border-color .2s;
+    &:hover {
+      border-color: $color-500;
+    }
+  }
+}

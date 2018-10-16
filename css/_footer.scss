@@ -1,0 +1,93 @@
+.footer {
+  font-size: 13px;
+  margin-top: 30px;
+  color: #bababa;
+  background-color: #373939;
+  .copyright {
+    padding: 10px;
+    color: #bababa;
+    background-color: #202222;
+  }
+  .title-footer {
+    font-size: 18px;
+    line-height: 1;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #bababa;
+  }
+  ul {
+    line-height: 1.7;
+    padding: 0;
+    list-style: none;
+    li a {
+      color: #bababa;
+      &:hover {
+        color: $color-500;
+      }
+    }
+  }
+  .input-group {
+    .form-control {
+      border-color: #fff;
+      &:focus {
+        border-color: #fff;
+      }
+    }
+    .btn {
+      border-color: #fff;
+    }
+  }
+  .footer-icon span i {
+    line-height: 2.2;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    border: 1px solid #a3a3a3;
+    border-radius: 100%;
+  }
+  .follow-us {
+    font-size: 0; //css-tricks.com/fighting-the-space-between-inline-block-elements/
+    li {
+      display: inline-block;
+      a {
+        font-size: 20px;
+        line-height: 1.9;
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 10px 10px 0 0;
+        transition: background-color .1s;
+        text-align: center;
+        border: 1px solid #a3a3a3;
+        border-radius: 100%;
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+          background-color: $color-500;
+        }
+      }
+    }
+  }
+}
+.back-top {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  bottom: 0;
+  display: none;
+  width: 30px;
+  height: 23px;
+  color: #fff;
+  background-color: #202222;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+  }
+  &:hover {
+    background-color: #373939;
+    transition: all 100ms ease-in-out 0s;
+  }
+}

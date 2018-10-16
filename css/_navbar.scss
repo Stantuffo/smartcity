@@ -1,0 +1,56 @@
+.navbar-theme {
+  z-index: 3;
+  background-color: #f3f3f3 !important;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+  .navbar-nav {
+    .nav-link {
+      padding: .6rem .7rem;
+      color: $color;
+    }
+    .nav-link:hover,
+    .show > .nav-link,
+    .active > .nav-link {
+      color: #fff !important;
+      background-color: $color-500;
+    }
+  }
+  .navbar-text a {
+    color: $color;
+    @include hover-focus {
+      color: $color;
+    }
+  }
+}
+.navbar-theme .nav-item.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown-submenu {
+  position: relative;
+  > .dropdown-menu {
+    top: -0.5rem;
+    left: 100%;
+    margin-left: -1px;
+  }
+  &:hover {
+    > .dropdown-menu {
+      display: block;
+    }
+  }
+  > a:after {
+    font-family: 'fontAwesome';
+    display: block;
+    float: right;
+    margin-right: -10px;
+    content: "\f0da";
+  }
+}
+.mega-menu {
+  position: inherit;
+  .mega-menu-content {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    .overlay-thumbnail {
+      height: 99%; // fix weird img hover transform on chrome
+    }
+  }
+}

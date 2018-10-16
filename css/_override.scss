@@ -1,0 +1,124 @@
+body,
+.tooltip,
+.popover {
+  font-family: $font-family;
+}
+body,
+.form-control,
+.dropdown-menu {
+  font-size: $font-size;
+}
+body,
+pre,
+.dropdown-menu,
+.dropdown-item,
+.list-group-item-action:active,
+.popover-body,
+.custom-select,
+.form-control,
+.form-control:focus {
+  color: $color;
+}
+.body-pattern {
+  background: rgba(0, 0, 0, 0) url('../images/circles-dark.png') repeat scroll 0% 0%;
+}
+.tooltip-inner {
+  font-size: 0.8125rem;
+}
+.custom-control {
+  line-height: 1.7;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $color-500;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem $color-500;
+}
+.form-control:focus {
+  border-color: $color-500;
+  box-shadow: none;
+}
+.page-item.active .page-link {
+  background-color: $color-500;
+  border-color: $color-500;
+}
+.page-link {
+  color: $color;
+  border-bottom: 2px solid #d6d8d9;
+  &:hover {
+    color: $color;
+  }
+}
+.list-group-item.active {
+  border-color: $color-500;
+  background-color: $color-500;
+}
+
+// Add theme variant
+.btn-theme {
+  @include button-variant($color-500, $color-500);
+}
+.btn-outline-theme {
+  @include button-outline-variant($color-500);
+}
+.btn-outline-default {
+  @include button-outline-variant($input-border-color);
+}
+.btn-outline-default:active,
+.btn-outline-default.active,
+.show > .btn-outline-default.dropdown-toggle {
+  border-color: $color-500;
+  box-shadow: none;
+}
+.badge-theme {
+  @include badge-variant($color-500);
+}
+@include bg-variant('.bg-theme', $color-500);
+
+@function color-level($color, $level: 0) {
+  $color-base: if($level > 0, #000, #fff);
+
+  @if $level < 0 {
+    // Lighter values need a quick double negative for the Sass math to work
+    @return mix($color-base, $color, $level * -1 * $theme-color-interval);
+  } @else {
+    @return mix($color-base, $color, $level * $theme-color-interval);
+  }
+}
+.alert-theme {
+  @include alert-variant(color-level($color-500, -10), color-level($color-500, -9), color-level($color-500, 6));
+}
+.close {
+  font-size: 1.4rem;
+}
+
+
+// Dropdown
+.dropdown-toggle::after {
+  vertical-align: 0.200em;
+}
+.dropdown-menu {
+  box-shadow: $dropdown-box-shadow;
+}
+.dropdown-menu-right.smooth {
+  right: 0;
+  left: auto;
+}
+.dropdown-item {
+  padding: .25rem 1.2rem;
+  &.active,
+  &:active {
+    color: inherit;
+    outline: 0;
+    background-color: #e9ecef;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.nav-tabs .nav-link:not(.active):hover {
+  border-color: #dee2e6;
+  background-color: #dee2e6;
+}

@@ -1,0 +1,50 @@
+// speed up some animation from the animate.css
+.slideInDown,
+.zoomIn,
+.rotateInDownLeft,
+.fadeIn,
+.fadeInDown {
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+// simple animation for dropdown
+@-webkit-keyframes simpleFadeInDown {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+@keyframes simpleFadeInDown {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+.simpleFadeInDown {
+  -webkit-animation-name: simpleFadeInDown;
+          animation-name: simpleFadeInDown;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+// animated dropdown that has a 'smooth' class
+.smooth.dropdown-menu.show,
+.navbar-theme .nav-item.dropdown:hover > .smooth.dropdown-menu,
+.dropdown-submenu:hover > .smooth.dropdown-menu {
+  @extend .simpleFadeInDown;
+}

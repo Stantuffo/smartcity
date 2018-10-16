@@ -1,0 +1,27 @@
+.user-card {
+  border-bottom: 2px solid #d6d8d9;
+  .img-thumbnail {
+    width: 100px;
+    margin-right: .5rem;
+  }
+  .user-name {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+  }
+}
+@include media-breakpoint-up(md) {
+  .user-card .img-thumbnail {
+    width: 70px;
+  }
+  .user-name {
+    font-size: 1rem;
+  }
+}
+@include media-breakpoint-only(xl) {
+  .user-card .img-thumbnail {
+    width: 100px;
+  }
+  .user-name {
+    font-size: 1.25rem;
+  }
+}

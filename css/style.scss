@@ -1,0 +1,24 @@
+// sass --watch -C -t expanded style.scss:style.css
+
+@import '../bootstrap-scss/functions';
+@import '../bootstrap-scss/variables';
+@import '../bootstrap-scss/mixins';
+
+@import 'variables';
+@import 'font';
+@import 'animation';
+@import 'override';
+@import 'offcanvas';
+@import 'dropdown-select';
+@import 'header';
+@import 'navbar';
+@import 'slider';
+@import 'product';
+@import 'badge';
+@import 'brand';
+@import 'breadcrumb';
+@import 'sidebar';
+@import 'blog';
+@import 'account';
+@import 'footer';
+@import 'utils';

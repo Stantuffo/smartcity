@@ -1,0 +1,45 @@
+.custom-badge {
+  height: 16px;
+}
+.custom-badge.badge {
+  position: relative;
+  vertical-align: text-bottom;
+}
+.custom-badge.badge.arrowed-left:before {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  display: inline-block;
+  content: '';
+  border: 1px solid transparent;
+  border-width: 8px 5px;
+}
+.custom-badge.badge.arrowed-right:before {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  display: inline-block;
+  content: '';
+  border: 1px solid transparent;
+  border-width: 8px 5px;
+}
+.custom-badge.badge.arrowed-left {
+  margin-left: 5px;
+}
+.custom-badge.badge.arrowed-right {
+  margin-right: 5px;
+}
+.custom-badge.badge-theme.arrowed-left:before {
+  border-right-color: $color-500;
+}
+.custom-badge.badge-theme.arrowed-right:before {
+  border-left-color: $color-500;
+}
+@each $color, $value in $theme-colors {
+  .custom-badge.badge-#{$color}.arrowed-left:before {
+    border-right-color: $value;
+  }
+  .custom-badge.badge-#{$color}.arrowed-right:before {
+    border-left-color: $value;
+  }
+}
